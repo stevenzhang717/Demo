@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+    <definition name="template" template="/WEB-INF/Views/template.jsp">
+    </definition>
+
+    <definition name="menu_template" extends="template">
+        <put-attribute name="menu" value="/WEB-INF/Views/menu_template.jsp"/>
+    </definition>
+
+    <definition name="home" extends="menu_template">
+        <put-attribute name="body" value="/WEB-INF/views/index.jsp"/>
+    </definition>
+
+    <definition name="registration_success" extends="template">
+        <put-attribute name="body" value="/WEB-INF/Views/registration_success.jsp"/>
+    </definition>
+
+    <definition name="posts" extends="menu_template">
+        <put-attribute name="body" value="/WEB-INF/Views/posts.jsp"/>
+    </definition>
+</tiles-definitions>

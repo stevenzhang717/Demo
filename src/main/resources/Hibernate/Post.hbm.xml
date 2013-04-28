@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Domain" default-lazy="false">
+
+    <class name="Domain.Post" table="posts">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="subject" type="java.lang.String" column="subject"/>
+        <property name="content" type="java.lang.String" column="content"/>
+        <many-to-one name="user" class="Domain.User"
+                     unique="true" not-null="true" lazy="false" cascade="none" column="user"/>
+        <property name="created" type="java.sql.Timestamp" column="created"/>
+        <property name="weather" type="java.lang.String" column="weather"/>
+    </class>
+
+</hibernate-mapping>

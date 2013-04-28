@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Domain" default-lazy="false">
+
+    <class name="Domain.User" table="users">
+        <id name="username" type="java.lang.String" column="username"/>
+        <property name="password" type="java.lang.String" column="password"/>
+        <property name="email" type="java.lang.String" column="email"/>
+        <property name="accountExpiry" type="java.sql.Date" column="account_expiry"/>
+        <property name="locked" type="org.hibernate.type.NumericBooleanType" column="non_locked"/>
+        <property name="enabled" type="org.hibernate.type.NumericBooleanType" column="enabled"/>
+        <property name="credentialExpiry" type="java.sql.Date" column="credential_expiry"/>
+        <property name="authority" column="role" not-null="true">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">Domain.Authority</param>
+                <param name="type">12</param>
+            </type>
+        </property>
+
+
+    </class>
+
+</hibernate-mapping>
