@@ -23,8 +23,8 @@ public class PostServiceImpl implements PostService {
     private PostDAO postDAO;
 
     @Override
-    public ArrayList<Post> getPostByUsername(String username) {
-        return postDAO.getPostsByUsername(username);
+    public ArrayList<Post> getPostByUsername(String username, String order) {
+        return postDAO.getPostsByUsername(username, order);
     }
 
     @Override

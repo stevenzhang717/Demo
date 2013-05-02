@@ -26,6 +26,7 @@ import java.util.ArrayList;
  */
 @Controller
 public class MainController {
+    private static String DEFAULT_POSTS_ORDER = "created";
     @Resource
     private UserService userService;
     @Resource
@@ -85,8 +86,14 @@ public class MainController {
     @RequestMapping("/users/{username}/loadUserFeeds")
     public
     @ResponseBody
-    ArrayList<Post> loadUserFeeds(@PathVariable("username") String username) {
-        return postService.getPostByUsername(username);
+    ArrayList<Post> loadUserFeeds(@PathVariable("username") String username,
+                                  @RequestParam(value = "order", required = false) String order) {
+        if (order == null) {
+            return postService.getPostByUsername(username, DEFAULT_POSTS_ORDER);
+        } else {
+            System.out.println(order);
+            return postService.getPostByUsername(username, order);
+        }
     }
 
     @RequestMapping(value = "/users/{username}/addPost", method = RequestMethod.POST)

@@ -15,11 +15,11 @@
 <script type="text/javascript">
     //wait 5 seconds and redirect the user to the homepage
     window.setTimeout(function () {
-        window.location.href = '/';
+        window.location.href = context + '/';
     }, 5000);
 </script>
 
-<div id="successMessage">
+<div class="successMessage">
     <p>${requestScope.user.username}, You have been register an account successfully!
         we will now redirect you for you back to the home page so that you could login.</p>
 </div>

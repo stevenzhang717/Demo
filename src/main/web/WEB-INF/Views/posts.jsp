@@ -11,26 +11,38 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<script type="text/javascript" src="<c:url value="/resources/js/jquery-1.9.1.min.js"/>"> </script>
-<script type="text/javascript" src="<c:url value="/resources/js/post.js"/>"> </script>
+<div class="column-middle">
+    <div class="post-list">
+        <h2>Posts</h2>
+        <label for="order-by">Orders: </label>
+        <select name="order" id="order-by">
+            <option value="created" class="orders" selected="selected">Creation</option>
+            <option value="subject" class="orders">Title</option>
+        </select>
+        <ul id="posts">
 
-<div class="span6 offset1">
-    <c:if test="${showNewForm}">
-        <div id="postDiv">
+        </ul>
+    </div>
+</div>
+<c:if test="${showNewForm}">
+    <div class="column-right">
+        <div class="post-form">
             <h2>New Post</h2>
 
-            <form id="postForm" action="/users/<security:authentication property="principal.username" />/addPost"
+            <form id="postForm"
+                  action="${pageContext.request.contextPath}/users/<security:authentication property="principal.username" />/addPost"
                   method="post">
-                Subject: <input type="text" name="subject"><br>
-                Weather Condition: <span id="weather"></span><br>
-                Content: <input type="text" name="content">
-                <input id="weather_input" type="hidden" name="weather"/>
-                <input type="submit" value="submit">
+                <div class="form-fields">
+                    <ul>
+                        <li><label for="subject">Subject:</label><input type="text" id="subject" name="subject"></li>
+                        <li>Weather Condition: <span id="weather"></span></li>
+                        <li><label for="content">Content:</label> <textarea cols="40" rows="5" id="content"
+                                                                            name="content"> </textarea></li>
+                        <li><input id="weather_input" type="hidden" name="weather"/></li>
+                        <li><input type="submit" value="submit"></li>
+                    </ul>
+                </div>
             </form>
         </div>
-    </c:if>
-
-    <ul id="posts">
-
-    </ul>
-</div>
+    </div>
+</c:if>

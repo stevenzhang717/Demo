@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public interface PostService {
-    public ArrayList<Post> getPostByUsername(String username);
+    public ArrayList<Post> getPostByUsername(String username, String order);
 
     void addPost(Post post);
 }

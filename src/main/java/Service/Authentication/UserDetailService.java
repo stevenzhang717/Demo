@@ -1,7 +1,6 @@
 package Service.Authentication;
 
 import DAO.API.UserDAO;
-import Domain.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

@@ -13,7 +13,7 @@
     </definition>
 
     <definition name="home" extends="menu_template">
-        <put-attribute name="body" value="/WEB-INF/views/index.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/Views/index.jsp"/>
     </definition>
 
     <definition name="registration_success" extends="template">

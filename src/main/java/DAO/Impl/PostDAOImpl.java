@@ -23,10 +23,10 @@ public class PostDAOImpl implements PostDAO {
     private HibernateTemplate hibernateTemplate;
 
     @Override
-    public ArrayList<Post> getPostsByUsername(String username) {
+    public ArrayList<Post> getPostsByUsername(String username, String order) {
         //get the post list and order it by date
         ArrayList<Post> posts = (ArrayList<Post>) hibernateTemplate.findByCriteria(DetachedCriteria.forClass(Post.class)
-                .add(Property.forName("user.username").eq(username)).addOrder(Property.forName("created").desc()));
+                .add(Property.forName("user.username").eq(username)).addOrder(Property.forName(order).desc()));
         return posts;
     }
 

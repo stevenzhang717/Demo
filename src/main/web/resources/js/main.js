@@ -14,7 +14,7 @@ function validation() {
         var isSuccess = false;
         $.ajax({
             type: "GET",
-            url: "/isUsernameUnique",
+            url: context+"/isUsernameUnique",
             async: false,
             data: {username: $('input.username').val()},
             success: function (data, data1, data2) {

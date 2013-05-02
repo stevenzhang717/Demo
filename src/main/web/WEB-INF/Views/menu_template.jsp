@@ -10,23 +10,23 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
-<div id=loginPanel class="span3">
+<div id=loginPanel class="column-left">
     <sec:authorize access="isAnonymous()">
         <h2>Login</h2>
-        <spring:url var="loginUrl" value="/j_spring_security_check" />
+        <spring:url var="loginUrl" value="/j_spring_security_check"/>
         <div>
             <form name="loginForm" action="${loginUrl}" method="post">
                 <table>
                     <tr>
                         <td><label for="username">User Name:</label></td>
-                        <td><input id="username" type="text" name="j_username" /></td>
+                        <td><input id="username" type="text" name="j_username"/></td>
                     </tr>
                     <tr>
                         <td><label for="password">Password:</label></td>
-                        <td><input id="password" type="password" name="j_password" /></td>
+                        <td><input id="password" type="password" name="j_password"/></td>
                     </tr>
                     <tr>
-                        <td colspan="2" align="center"><input name="submit" type="submit" value="Login" /></td>
+                        <td colspan="2" align="center"><input name="submit" type="submit" value="Login"/></td>
                     </tr>
                 </table>
             </form>
@@ -39,8 +39,8 @@
 
         <p>And your user name is
 
-        <p><strong><sec:authentication property="principal.username" /></strong>
-                <spring:url var="userpage" value="/RedirectUser" />
+        <p><strong><sec:authentication property="principal.username"/></strong>
+                <spring:url var="userpage" value="/RedirectUser"/>
 
         <p><a href="${userpage}">Your home page</a>
 

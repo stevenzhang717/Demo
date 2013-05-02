@@ -1,69 +1,141 @@
-body {
-    padding: 60px 10px 40px;
+body, html {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
 }
 
-#loginPanel {
-    background-color: lightblue;
-    padding: 15px;
-    border-radius: 25px;
+div {
+    display: block;
 }
 
-#loginPanel input {
-    width: 90%;
+fieldset {
+    border: 0;
 }
 
-.signUp {
+.header-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: block;
+    background-color: #000000;
+    padding-left: 2%;
+}
+
+.header-bar h1 {
+    color: #ffffff;
+    font-size: 130%;
+}
+
+.container {
+    padding: 1%;
+    height: 85%;
+    margin-top: 4%;
+    background-color: royalblue;
+}
+
+#signupPanel {
     position: absolute;
     left: 30%;
     top: 15%;
     background-color: lightgray;
-    padding: 8%;
+    padding: 4%;
     z-index: 100;
     border-radius: 25px;
     display: none;
+    border-style: solid;
 }
 
 #closelink {
-    position: relative;
-    right: 0;
-
+    float: right;
 }
 
-#successMessage {
-    position: absolute;
-    left: 15%;
-    top: 15%;
-    background-color: lightgray;
-    width: 50%;
-    padding: 8%;
-    z-index: 100;
+.columns {
+    height: 100%;
+    width: 100%;
+}
+
+.columns div {
+    margin-right: 1%;
+    float: left;
+    padding: 1%;
     border-radius: 25px;
+    overflow: scroll;
 }
 
-ul {
+div .column-left {
+    height: 90%;
+    width: 20%;
+    background-color: lightblue;
+}
+
+div .column-middle {
+    width: 40%;
+    height: 90%;
+    background-color: lightcyan;
+}
+
+div .column-right {
+    height: 50%;
+    width: 30%;
+    background-color: lightgray;
+}
+
+div .post-form {
+    height: 98%;
+    padding: 2%;
+}
+
+div .post-list {
+    width: 95%;
+    height: 98%;
+    padding: 2%;;
+    overflow: scroll;;
+}
+
+div .footer {
+    clear: both;
+    padding-right: 10%;
+}
+
+.footer span {
+    float: right;
+}
+
+ul {;
     list-style-type: none;
+    padding-left: 0;
 }
 
 #posts li {
     margin-bottom: 4px;
     border-radius: 10px;
     padding: 20px;
-    border-style: solid;
-    border-width: 4px;
-    border-color: cornflowerblue;
+    border: 4px solid cornflowerblue;
+}
+
+#posts li .subject {
+    font-weight: bold;
+    font-size: 150%;
 }
 
 #posts li:nth-child(odd) {
     background-color: lightgoldenrodyellow;
 }
 
+#posts li:nth-child(even) {
+    background-color: lightgreen;
+}
+
 #posts li span {
     float: right;
 }
 
-#postDiv {
-    background-color: lightskyblue;
-    border-radius: 20px;
-    padding: 10px;
-    margin-bottom: 20px;
+.form-fields ul li textarea {
+    vertical-align: middle;
+}
+
+.successMessage {
+    background-color: bisque;
 }

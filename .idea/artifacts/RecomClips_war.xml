@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="RecomClips:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/RecomClips_war</output-path>
+    <root id="archive" name="RecomClips_war.war">
+      <element id="artifact" artifact-name="RecomClips:war exploded" />
+    </root>
+  </artifact>
+</component>
