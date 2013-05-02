@@ -15,11 +15,14 @@
 <head>
     <meta charset="utf-8">
     <title>Diaries by Steven Zhang</title>
-    <link rel="stylesheet" type="text/css" href="/resources/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/style.css"/>" media="screen" />
     <script>
         //get context path so that all the javascript could request the right url
         var context = "${pageContext.request.contextPath}";
     </script>
+    <script type="text/javascript" src="<c:url value="/resources/js/jquery-1.9.1.min.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/jquery.validate.min.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/main.js"/>"></script>
 </head>
 <body>
 <div class="header-bar">
@@ -49,8 +52,5 @@
         </form>
     </div>
 </div>
-<script type="text/javascript" src="<c:url value="/resources/js/jquery-1.9.1.min.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/jquery.validate.min.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/main.js"/>"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<script type="text/javascript" src="<c:url value="/resources/js/post.js"/>"></script>
 <div class="column-middle">
     <div class="post-list">
         <h2>Posts</h2>
