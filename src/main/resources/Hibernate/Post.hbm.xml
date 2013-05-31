@@ -9,11 +9,11 @@
             <generator class="increment"/>
         </id>
         <property name="subject" type="java.lang.String" column="subject"/>
+        <property name="weather" type="java.lang.String" column="weather"/>
         <property name="content" type="java.lang.String" column="content"/>
         <many-to-one name="user" class="Domain.User"
                      unique="true" not-null="true" lazy="false" cascade="none" column="user"/>
         <property name="created" type="java.sql.Timestamp" column="created"/>
-        <property name="weather" type="java.lang.String" column="weather"/>
     </class>
 
 </hibernate-mapping>

@@ -25,10 +25,10 @@
     <script type="text/javascript" src="<c:url value="/resources/js/main.js"/>"></script>
 </head>
 <body>
-<div class="header-bar">
-    <h1>Diaries by Steven Zhang</h1>
-</div>
 <div class="container">
+    <div class="header-bar">
+        <h1>Diaries by Steven Zhang</h1>
+    </div>
     <div class="columns">
         <tiles:insertAttribute name="menu" ignore="true"/>
         <tiles:insertAttribute name="body"/>

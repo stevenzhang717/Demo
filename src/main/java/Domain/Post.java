@@ -16,10 +16,10 @@ import java.sql.Timestamp;
 public class Post {
     private long id;
     private String subject;
+    private String weather;
     private String content;
     private User user;
     private Timestamp created;
-    private String weather;
 
     public Post() {
 

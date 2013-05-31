@@ -1,3 +1,23 @@
+/*function Posts(target) {
+    this.list = $('<ul/>');
+}
+
+Posts.prototype.addListItem = function(item) {
+    var feed = $('<li/>');
+    for(var key in item) {
+        if (item.hasOwnProperty(key)) {
+            $('<p/>').attr('class',key).appendTo(feed).text(item[key]);
+        }
+    }
+    this.list.append(feed);
+}
+
+Posts.prototype.formatElement = function(element, format) {
+    this.list[0].getElementsByClassName('id').each(function(key,val) {
+        console.log(val);
+    });
+}*/
+
 function appendListItem(subject, content, date, weather) {
     //establish the structure of a list item, and add a class name for css purpose
     var element = document.createElement('li');
@@ -33,9 +53,10 @@ $(document).ready(function () {
             appendListItem(val.subject, val.content, new Date(val.created), val.weather);
         });
     });
+
     $('select#order-by').change(function(){
         var order = $(this).val();
-        $("ul").empty();
+        $("ul #posts").empty();
         $.getJSON(context+"/users/" + owner + "/loadUserFeeds",{order:order}, function (data) {
             $("#posts").empty();
             $.each(data, function (key, val) {
@@ -43,7 +64,9 @@ $(document).ready(function () {
             });
         });
 
+
     });
     //put the weather condition on when user want to post a new post
     getWetherCondition();
+
 });

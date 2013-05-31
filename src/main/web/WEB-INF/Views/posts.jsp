@@ -12,23 +12,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script type="text/javascript" src="<c:url value="/resources/js/post.js"/>"></script>
 <div class="column-middle">
+    <h2>Posts</h2>
+    <label for="order-by">Orders: </label>
+    <select name="order" id="order-by">
+        <option value="created" class="orders" selected="selected">Creation</option>
+        <option value="subject" class="orders">Title</option>
+    </select>
     <div class="post-list">
-        <h2>Posts</h2>
-        <label for="order-by">Orders: </label>
-        <select name="order" id="order-by">
-            <option value="created" class="orders" selected="selected">Creation</option>
-            <option value="subject" class="orders">Title</option>
-        </select>
         <ul id="posts">
 
         </ul>
     </div>
 </div>
 <c:if test="${showNewForm}">
+    <h2>New Post</h2>
     <div class="column-right">
         <div class="post-form">
-            <h2>New Post</h2>
-
             <form id="postForm"
                   action="${pageContext.request.contextPath}/users/<security:authentication property="principal.username" />/addPost"
                   method="post">
